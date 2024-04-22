@@ -16,33 +16,13 @@ public class StudentMain {
      */
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        StudentBL studBL = new StudentBL();
+        System.out.println("Enter Last Name to compute for grades: ");
+        String lastName = scan.nextLine();
         
-        System.out.print("Enter First Name: ");
-        String fName = scan.nextLine();
+        System.out.println(studBL.GetAverage(lastName));
         
-        System.out.print("Enter Last Name: ");
-        String lName = scan.nextLine();
-        
-        System.out.print("Enter Course: ");
-        String course = scan.nextLine();
-        
-        System.out.print("Enter Section: ");
-        String sec = scan.nextLine();
-        
-        System.out.print("Enter Year: ");
-        String yr = scan.nextLine();
-        
-        System.out.print("Enter Midterm Grade: ");
-        double mGrade = scan.nextDouble();
-        
-        System.out.print("Enter Final Grade: ");
-        double fGrade = scan.nextDouble();
-        
-        Student s = new Student(fName, lName, course, sec, yr, mGrade, fGrade);
-        
-        System.out.println(s.Introduce());
-        
-        System.out.println(s.evalGrade());
+        main(args);
     }
     
 }
